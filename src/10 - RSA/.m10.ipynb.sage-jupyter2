@@ -1,0 +1,26 @@
+{"backend_state":"init","kernel":"python3","kernel_state":"idle","kernel_usage":{"cpu":0,"memory":0},"last_ipynb_save":1745479856193,"metadata":{"language_info":{"codemirror_mode":{"name":"ipython","version":3},"file_extension":".py","mimetype":"text/x-python","name":"python","nbconvert_exporter":"python","pygments_lexer":"ipython3","version":"3.10.12"}},"type":"settings"}
+{"cell_type":"code","exec_count":0,"id":"08fdfe","input":"from sympy import randprime\nfrom math import gcd","pos":2,"type":"cell"}
+{"cell_type":"code","exec_count":0,"id":"104019","input":"def rsa_encrypt(plain_text, rsa_modulus, public_exponent):\n    cipher = ''.join(chr((ord(ch)**public_exponent) % rsa_modulus) for ch in plain_text)\n    return cipher.encode().hex()","pos":14,"type":"cell"}
+{"cell_type":"code","exec_count":0,"id":"3a5ef4","input":"def modinv(b, n):   \n    g, x, _ = egcd(b, n)\n    if g == 1:\n        return x % n","pos":6,"type":"cell"}
+{"cell_type":"code","exec_count":0,"id":"460520","input":"def euler_totient_function(prime_1, prime_2):\n    # Your code here\n    return result","pos":10,"type":"cell"}
+{"cell_type":"code","exec_count":0,"id":"474eb1","input":"def egcd(a, b):\n    if a == 0:\n        return (b, 0, 1)\n    else:\n        g, x, y = egcd(b % a, a)\n        return (g, y - (b // a) * x, x)\n","pos":4,"type":"cell"}
+{"cell_type":"code","exec_count":0,"id":"4ac1ab","input":"# Your code here","pos":20,"type":"cell"}
+{"cell_type":"code","exec_count":0,"id":"c3dd68","input":"key_size = 10\nprime_p, prime_q = generate_primes(key_size)\nprint('[x] prime p = {}'.format(prime_p))\nprint('[x] prime q = {}'.format(prime_q))\n\n\nrsa_modulus = prime_p * prime_q\n\ntotient = euler_totient_function(prime_p, prime_q)\npublic_exponent = generate_public_exponents(totient)\nprivate_exponent = modinv(public_exponent, totient)\n\nplain_text = 'our secret message'\ncipher_text = rsa_encrypt(plain_text, rsa_modulus, public_exponent)\nrecovered_plain_text = rsa_decrypt(cipher_text, rsa_modulus, private_exponent)\n\n","pos":18,"type":"cell"}
+{"cell_type":"code","exec_count":0,"id":"c55974","input":"def generate_public_exponents(totient):\n    public_exponent = 0\n    # Your code here\n    return public_exponent","pos":12,"type":"cell"}
+{"cell_type":"code","exec_count":0,"id":"c8254e","input":"def generate_primes(key_size):\n    prime_1 = 0 \n    prime_2 = 0\n    # makes sure both are not the same, and their product does not exceed the final number of bits (key size)\n    while prime_1 == prime_2 or (prime_1 * prime_2) > 2**key_size:\n        # You may use randprime to generate the primes\n        # Your code here\n    return prime_1, prime_2\n","pos":8,"type":"cell"}
+{"cell_type":"code","exec_count":0,"id":"c9a58f","input":"# Your code here","pos":22,"type":"cell"}
+{"cell_type":"code","exec_count":0,"id":"fe863f","input":"def rsa_decrypt(cipher_text, rsa_modulus, private_exponent):\n    # Your code here","pos":16,"type":"cell"}
+{"cell_type":"markdown","id":"00d71d","input":"#### Modular inverse function\n\n","pos":5,"type":"cell"}
+{"cell_type":"markdown","id":"1003f2","input":"#### Testing\n\n","pos":17,"type":"cell"}
+{"cell_type":"markdown","id":"143c3a","input":"# RSA\n\n","pos":0,"type":"cell"}
+{"cell_type":"markdown","id":"174227","input":"#### Extended Euclidean Algorithm\n\n","pos":3,"type":"cell"}
+{"cell_type":"markdown","id":"202d3c","input":"#### Public Exponents\n\n","pos":11,"type":"cell"}
+{"cell_type":"markdown","id":"4b7d39","input":"#### Euler Function\n\n","pos":9,"type":"cell"}
+{"cell_type":"markdown","id":"a6ddb5","input":"##### **Exercise**\n\nutilize RSA for confidentiality/authentication\n","pos":21,"type":"cell"}
+{"cell_type":"markdown","id":"b99216","input":"#### Generate two random prime numbers\n\n","pos":7,"type":"cell"}
+{"cell_type":"markdown","id":"bfa80d","input":"##### **Exercise**\n\nCreate a class for RSA encryption \\(keys are created/given when its constructor is called\\)\n\n","pos":19,"type":"cell"}
+{"cell_type":"markdown","id":"cd0a88","input":"#### Decryption\n\n","pos":15,"type":"cell"}
+{"cell_type":"markdown","id":"e13b41","input":"####\n\n","pos":1,"type":"cell"}
+{"cell_type":"markdown","id":"e87c82","input":"#### Encryption\n\n","pos":13,"type":"cell"}
+{"id":0,"time":1745479836151,"type":"user"}
+{"last_load":1745479834137,"type":"file"}

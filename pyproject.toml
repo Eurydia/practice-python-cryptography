@@ -4,4 +4,10 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "crypto>=1.4.1",
+    "httpx>=0.28.1",
+    "ipykernel>=6.29.5",
+    "pycryptodome>=3.22.0",
+    "sympy>=1.13.3",
+]
