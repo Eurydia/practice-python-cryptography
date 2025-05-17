@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "crypto>=1.4.1",
+    "cryptography>=44.0.3",
     "httpx>=0.28.1",
     "ipykernel>=6.29.5",
     "pycryptodome>=3.22.0",
